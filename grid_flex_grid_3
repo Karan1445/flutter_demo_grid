@@ -1,0 +1,155 @@
+import 'package:flutter/material.dart';
+
+void main()=>
+    runApp(MaterialApp(debugShowCheckedModeBanner: false,
+    home: MyApp()
+  ));
+
+class MyApp extends StatelessWidget{
+  MyApp({super.key});
+
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.lightBlueAccent.shade100,title:Text("Grid 3")),
+      body: Column(
+        children: [
+
+          Expanded(child: Row(
+            children: [
+              Expanded(child: Column(
+                children: [
+                  Expanded(child: Row(
+                    children: [
+                      buildContainer(1, Colors.lightGreenAccent.shade100),
+                      buildContainer(2, Colors.lightGreenAccent.shade200)
+                    ],
+                  )),
+                  Expanded(child: Row(
+                    children: [
+                      buildContainer(2, Colors.pinkAccent.shade100),
+                      buildContainer(1, Colors.pinkAccent.shade200)
+                    ],
+                  )),
+                  Expanded(child: Row(
+                    children: [
+                      buildContainer(1, Colors.lightBlueAccent.shade100),
+                      buildContainer(2, Colors.lightBlueAccent.shade200)
+                    ],
+                  ))
+                ],
+              )),
+              Expanded(child: Column(
+                children: [
+                  Expanded(child: Column(
+                    children: [
+                      buildContainer(1, Colors.lightGreen.shade100),
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.greenAccent.shade100),
+                          buildContainer(1, Colors.greenAccent.shade200),
+                          buildContainer(1, Colors.greenAccent.shade400)
+                        ],
+                      ))
+                    ],
+                  ))
+                ],
+              ))
+            ],
+          )),
+          Expanded(child: Row(
+            children: [
+              Expanded(child: Row(
+                children: [
+                  Expanded(child: Column(
+                    children: [
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.deepPurpleAccent.shade100),
+                          buildContainer(1, Colors.deepPurpleAccent.shade200)
+                        ],
+                      )),
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.deepPurpleAccent.shade200),
+                          Expanded(child: Column(
+                            children: [
+                              buildContainer(1, Colors.deepPurpleAccent.shade400),
+                              buildContainer(1,Colors.deepPurpleAccent.shade700)
+                            ],
+                          ))
+                        ],
+                      )),
+
+                    ],
+                  )),
+                  Expanded(child: Column(
+                    children: [
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.lightGreen.shade50),
+                          buildContainer(1, Colors.lightGreen.shade100)
+                        ],
+                      )),
+                      Expanded(child: Column(
+                        children: [
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(2  , Colors.deepPurple.shade300),
+                              buildContainer(1, Colors.deepPurple.shade100),
+                              buildContainer(1, Colors.deepPurple.shade300)
+                            ],
+                          )),
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(2, Colors.deepPurple.shade100),
+                              buildContainer(1, Colors.deepPurple.shade300),
+                              buildContainer(1, Colors.deepPurple.shade100)
+                            ],
+                          )),
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(2, Colors.deepPurple.shade300),
+                              buildContainer(1, Colors.deepPurple.shade100),
+                              buildContainer(1, Colors.deepPurple.shade300)
+                            ],
+                          ))
+                        ],
+                      ))
+                    ],
+                  ))
+                ],
+              ))
+            ],
+          )),
+          Expanded(child: Row(
+            children: [
+              Expanded(child: Column(
+                children: [
+                  buildContainer(1, Colors.lightGreenAccent.shade400),
+                  buildContainer(1, Colors.lightGreenAccent.shade100)
+                ],
+              )),
+              Expanded(flex:3,child: Column(
+                children: [
+                  buildContainer(1, Colors.lightGreenAccent.shade100),
+                  Expanded(child: Row(
+                    children: [
+                      buildContainer(1, Colors.lightGreenAccent.shade400),
+                      buildContainer(1, Colors.lightGreenAccent.shade700)
+                    ],
+                  ))
+                ],
+              ))
+            ],
+          ))
+        ],
+      ),
+    );
+  }
+
+  Expanded buildContainer(int flex,Color color) {
+    return Expanded(flex: flex,child: Container(
+                  color: color,
+                ));
+  }
+}
