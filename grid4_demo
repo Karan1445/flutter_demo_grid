@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+
+void main()=>
+    runApp(
+      const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyApp(),
+      )
+    );
+
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: const Text("Grid 4")
+          ,backgroundColor: Colors.lightGreenAccent.shade700),
+      body:Row(
+        children: [
+          Expanded(child: Column(
+            children: [
+              Expanded(child: Row(
+                children: [
+                  Expanded(child: Column(
+                    children: [
+                      buildContainer(1, Colors.black26),
+                      Expanded(child: Column(
+                        children: [
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(1, Colors.white60),
+                              buildContainer(1, Colors.black38)
+                            ],
+                          )),
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(1, Colors.black38),
+                              buildContainer(1, Colors.white60)
+                            ],
+                          ))
+                        ],
+                      )),
+                      buildContainer(1, Colors.black26),
+                    ],
+                  )),
+                  Expanded(flex:2,child: Column(
+                    children: [
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.white10),
+                          buildContainer(1, Colors.black38)
+                        ],
+                      )),
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.black12),
+                          buildContainer(1, Colors.black45)
+                        ],
+                      ))
+                    ],
+                  )),
+                  buildContainer(1, Colors.black54),
+                  Expanded(child: Column(
+                    children: [
+                      buildContainer(1, Colors.black12),
+                      buildContainer(1, Colors.black26),
+                      buildContainer(1, Colors.black38)
+                    ],
+                  ))
+
+                ],
+              )),
+              Expanded(child: Row(
+                children: [
+                  Expanded(child: Column(
+                    children: [
+                      buildContainer(1, Colors.black26),
+                      buildContainer(1, Colors.black26),
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(2, Colors.black38),
+                          buildContainer(1, Colors.black54)
+                        ],
+                      ))
+                    ],
+                  )),
+                  Expanded(flex:2,child: Column(
+                    children: [
+                      Expanded(child: Column(
+                        children: [
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(1, Colors.black38),
+                              buildContainer(1, Colors.black54),
+                              buildContainer(1, Colors.black38)
+                            ],
+                          )),
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(1, Colors.black54),
+                              buildContainer(1, Colors.black12),
+                              buildContainer(1, Colors.black54)
+                            ],
+                          )),
+                          Expanded(child: Row(
+                            children: [
+                              buildContainer(1, Colors.black38),
+                              buildContainer(1, Colors.black54),
+                              buildContainer(1, Colors.black38)
+                            ],
+                          ))
+                        ],
+                      ))
+                    ],
+                  )),
+                  Expanded(child: Column(
+                    children: [
+                      Expanded(child: Row(
+                        children: [
+                          buildContainer(1, Colors.black45),
+                          buildContainer(1, Colors.black54)
+                        ],
+                      )),
+                      Expanded(flex:5,child: Row(
+                        children: [
+                          buildContainer(1, Colors.black38),
+                          buildContainer(1, Colors.black26)
+                        ],
+                      ))
+                    ],
+                  )),
+                  Expanded(child: Column(
+                    children: [
+                      buildContainer(1, Colors.black12),
+                      Expanded(flex:3,child: Row(
+                        children: [
+                          buildContainer(1, Colors.black26),
+                          buildContainer(1, Colors.black45)
+                        ],
+                      ))
+                    ],
+                  ))
+
+                ],
+              ))
+            ],
+          ))
+        ],
+      ),
+     
+    );
+  }
+
+  Expanded buildContainer(int flex,Color color) => Expanded(flex:flex,child: Container(color: color,margin:EdgeInsets.all(1),),);
+}
